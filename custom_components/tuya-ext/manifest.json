@@ -1,5 +1,5 @@
 {
-  "domain": "tuya-ext",
+  "domain": "tuya_ext",
   "name": "Tuya extensions",
   "codeowners": ["@Tuya", "@zlinoliver", "@frenck", "@donandren"],
   "config_flow": true,
@@ -39,9 +39,10 @@
       "macaddress": "D81F12*"
     }
   ],
-  "documentation": "https://github.com/donandren/tuya-ext",
+  "documentation": "https://github.com/donandren/tuya_ext",
   "integration_type": "hub",
   "iot_class": "cloud_push",
   "loggers": ["tuya_iot"],
+  "version": "0.1.0",
   "requirements": ["tuya-iot-py-sdk==0.6.6"]
 }
