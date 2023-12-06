@@ -1,0 +1,184 @@
+{
+  "home_assistant": {
+    "installation_type": "Home Assistant OS",
+    "version": "2023.12.0",
+    "dev": false,
+    "hassio": true,
+    "virtualenv": false,
+    "python_version": "3.11.6",
+    "docker": true,
+    "arch": "x86_64",
+    "timezone": "Europe/Sofia",
+    "os_name": "Linux",
+    "os_version": "6.1.59",
+    "supervisor": "2023.11.6",
+    "host_os": "Home Assistant OS 11.1",
+    "docker_version": "24.0.6",
+    "chassis": "vm",
+    "run_as_root": true
+  },
+  "custom_components": {
+  },
+  "integration_manifest": {
+    "domain": "tuya",
+    "name": "Tuya",
+    "codeowners": [
+      "@Tuya",
+      "@zlinoliver",
+      "@frenck"
+    ],
+    "config_flow": true,
+    "dependencies": [
+      "ffmpeg"
+    ],
+    "dhcp": [
+      {
+        "macaddress": "105A17*"
+      },
+      {
+        "macaddress": "10D561*"
+      },
+      {
+        "macaddress": "1869D8*"
+      },
+      {
+        "macaddress": "381F8D*"
+      },
+      {
+        "macaddress": "508A06*"
+      },
+      {
+        "macaddress": "68572D*"
+      },
+      {
+        "macaddress": "708976*"
+      },
+      {
+        "macaddress": "7CF666*"
+      },
+      {
+        "macaddress": "84E342*"
+      },
+      {
+        "macaddress": "D4A651*"
+      },
+      {
+        "macaddress": "D81F12*"
+      }
+    ],
+    "documentation": "https://www.home-assistant.io/integrations/tuya",
+    "integration_type": "hub",
+    "iot_class": "cloud_push",
+    "loggers": [
+      "tuya_iot"
+    ],
+    "requirements": [
+      "tuya-iot-py-sdk==0.6.6"
+    ],
+    "is_built_in": true
+  },
+  "data": {
+    "endpoint": "https://openapi.tuyaeu.com",
+    "auth_type": 0,
+    "country_code": "359",
+    "app_type": "smartlife",
+    "mqtt_connected": true,
+    "disabled_by": null,
+    "disabled_polling": false,
+    "name": "Climate",
+    "model": "",
+    "category": "infrared_ac",
+    "product_id": "qzktzhehinzsz2je",
+    "product_name": "Air Conditioning",
+    "online": true,
+    "sub": true,
+    "time_zone": "+03:00",
+    "active_time": "2023-11-10T12:51:19+00:00",
+    "create_time": "2023-11-10T12:51:19+00:00",
+    "update_time": "2023-11-10T12:51:19+00:00",
+    "function": {
+      "F": {
+        "type": "ENUM",
+        "value": {
+          "min": 0,
+          "max": 3,
+          "scale": 0,
+          "step": 1,
+          "type": "Integer"
+        }
+      },
+      "M": {
+        "type": "ENUM",
+        "value": {
+          "min": 0,
+          "max": 4,
+          "scale": 0,
+          "step": 1,
+          "type": "Integer"
+        }
+      },
+      "PowerOff": {
+        "type": "STRING",
+        "value": "PowerOff"
+      },
+      "PowerOn": {
+        "type": "STRING",
+        "value": "PowerOn"
+      },
+      "T": {
+        "type": "ENUM",
+        "value": {
+          "min": 16,
+          "max": 30,
+          "scale": 0,
+          "step": 1,
+          "type": "Integer"
+        }
+      }
+    },
+    "status_range": {
+      "wind": {
+        "type": "ENUM",
+        "value": {
+          "min": 0,
+          "max": 3,
+          "scale": 0,
+          "step": 1,
+          "type": "Integer"
+        }
+      },
+      "mode": {
+        "type": "ENUM",
+        "value": {
+          "min": 0,
+          "max": 4,
+          "scale": 0,
+          "step": 1,
+          "type": "Integer"
+        }
+      },
+      "power": {
+        "type": "BOOLEAN",
+        "value": {}
+      },
+      "temp": {
+        "type": "ENUM",
+        "value": {
+          "min": 16,
+          "max": 30,
+          "scale": 0,
+          "step": 1,
+          "type": "Integer"
+        }
+      }
+    },
+    "status": {},
+    "home_assistant": {
+      "name": "\u0445\u043e\u043b Fujitsu",
+      "name_by_user": null,
+      "disabled": false,
+      "disabled_by": null,
+      "entities": []
+    }
+  }
+}

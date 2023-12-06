@@ -1,0 +1,179 @@
+{
+  "home_assistant": {
+    "installation_type": "Home Assistant OS",
+    "version": "2023.12.0",
+    "dev": false,
+    "hassio": true,
+    "virtualenv": false,
+    "python_version": "3.11.6",
+    "docker": true,
+    "arch": "x86_64",
+    "timezone": "Europe/Sofia",
+    "os_name": "Linux",
+    "os_version": "6.1.59",
+    "supervisor": "2023.11.6",
+    "host_os": "Home Assistant OS 11.1",
+    "docker_version": "24.0.6",
+    "chassis": "vm",
+    "run_as_root": true
+  },
+  "custom_components": {
+  },
+  "integration_manifest": {
+    "domain": "tuya",
+    "name": "Tuya",
+    "codeowners": [
+      "@Tuya",
+      "@zlinoliver",
+      "@frenck"
+    ],
+    "config_flow": true,
+    "dependencies": [
+      "ffmpeg"
+    ],
+    "dhcp": [
+      {
+        "macaddress": "105A17*"
+      },
+      {
+        "macaddress": "10D561*"
+      },
+      {
+        "macaddress": "1869D8*"
+      },
+      {
+        "macaddress": "381F8D*"
+      },
+      {
+        "macaddress": "508A06*"
+      },
+      {
+        "macaddress": "68572D*"
+      },
+      {
+        "macaddress": "708976*"
+      },
+      {
+        "macaddress": "7CF666*"
+      },
+      {
+        "macaddress": "84E342*"
+      },
+      {
+        "macaddress": "D4A651*"
+      },
+      {
+        "macaddress": "D81F12*"
+      }
+    ],
+    "documentation": "https://www.home-assistant.io/integrations/tuya",
+    "integration_type": "hub",
+    "iot_class": "cloud_push",
+    "loggers": [
+      "tuya_iot"
+    ],
+    "requirements": [
+      "tuya-iot-py-sdk==0.6.6"
+    ],
+    "is_built_in": true
+  },
+  "data": {
+    "endpoint": "https://openapi.tuyaeu.com",
+    "auth_type": 0,
+    "country_code": "359",
+    "app_type": "smartlife",
+    "mqtt_connected": true,
+    "disabled_by": null,
+    "disabled_polling": false,
+    "name": "Smart IR",
+    "model": "S06ProWB3S\u65b0\u754c\u9762",
+    "category": "wnykq",
+    "product_id": "whs3cty93fzrqkpt",
+    "product_name": "Smart IR",
+    "online": true,
+    "sub": false,
+    "time_zone": "+03:00",
+    "active_time": "2023-10-11T10:59:24+00:00",
+    "create_time": "2023-10-11T09:42:43+00:00",
+    "update_time": "2023-12-06T21:05:57+00:00",
+    "function": {},
+    "status_range": {
+      "va_temperature": {
+        "type": "Integer",
+        "value": {
+          "unit": "\u2103",
+          "min": -200,
+          "max": 800,
+          "scale": 1,
+          "step": 1
+        }
+      },
+      "va_humidity": {
+        "type": "Integer",
+        "value": {
+          "unit": "%",
+          "min": 0,
+          "max": 100,
+          "scale": 0,
+          "step": 1
+        }
+      }
+    },
+    "status": {
+      "va_temperature": 233,
+      "va_humidity": 46
+    },
+    "home_assistant": {
+      "name": "\u0445\u043e\u043b Smart IR",
+      "name_by_user": null,
+      "disabled": false,
+      "disabled_by": null,
+      "entities": [
+        {
+          "disabled": false,
+          "disabled_by": null,
+          "entity_category": null,
+          "device_class": null,
+          "original_device_class": "temperature",
+          "icon": null,
+          "original_icon": null,
+          "unit_of_measurement": "\u00b0C",
+          "state": {
+            "entity_id": "sensor.khol_smart_ir_temperature",
+            "state": "23.3",
+            "attributes": {
+              "state_class": "measurement",
+              "unit_of_measurement": "\u00b0C",
+              "device_class": "temperature",
+              "friendly_name": "\u0445\u043e\u043b Smart IR \u0422\u0435\u043c\u043f\u0435\u0440\u0430\u0442\u0443\u0440\u0430"
+            },
+            "last_changed": "2023-12-06T21:29:39.266912+00:00",
+            "last_updated": "2023-12-06T21:29:39.266912+00:00"
+          }
+        },
+        {
+          "disabled": false,
+          "disabled_by": null,
+          "entity_category": null,
+          "device_class": null,
+          "original_device_class": "humidity",
+          "icon": null,
+          "original_icon": null,
+          "unit_of_measurement": "%",
+          "state": {
+            "entity_id": "sensor.khol_smart_ir_humidity",
+            "state": "46.0",
+            "attributes": {
+              "state_class": "measurement",
+              "unit_of_measurement": "%",
+              "device_class": "humidity",
+              "friendly_name": "\u0445\u043e\u043b Smart IR \u0412\u043b\u0430\u0436\u043d\u043e\u0441\u0442"
+            },
+            "last_changed": "2023-12-06T21:27:28.871605+00:00",
+            "last_updated": "2023-12-06T21:27:28.871605+00:00"
+          }
+        }
+      ]
+    }
+  }
+}

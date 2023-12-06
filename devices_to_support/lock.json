@@ -1,0 +1,429 @@
+{
+  "home_assistant": {
+    "installation_type": "Home Assistant OS",
+    "version": "2023.12.0",
+    "dev": false,
+    "hassio": true,
+    "virtualenv": false,
+    "python_version": "3.11.6",
+    "docker": true,
+    "arch": "x86_64",
+    "timezone": "Europe/Sofia",
+    "os_name": "Linux",
+    "os_version": "6.1.59",
+    "supervisor": "2023.11.6",
+    "host_os": "Home Assistant OS 11.1",
+    "docker_version": "24.0.6",
+    "chassis": "vm",
+    "run_as_root": true
+  },
+  "custom_components": {
+  },
+  "integration_manifest": {
+    "domain": "tuya",
+    "name": "Tuya",
+    "codeowners": [
+      "@Tuya",
+      "@zlinoliver",
+      "@frenck"
+    ],
+    "config_flow": true,
+    "dependencies": [
+      "ffmpeg"
+    ],
+    "dhcp": [
+      {
+        "macaddress": "105A17*"
+      },
+      {
+        "macaddress": "10D561*"
+      },
+      {
+        "macaddress": "1869D8*"
+      },
+      {
+        "macaddress": "381F8D*"
+      },
+      {
+        "macaddress": "508A06*"
+      },
+      {
+        "macaddress": "68572D*"
+      },
+      {
+        "macaddress": "708976*"
+      },
+      {
+        "macaddress": "7CF666*"
+      },
+      {
+        "macaddress": "84E342*"
+      },
+      {
+        "macaddress": "D4A651*"
+      },
+      {
+        "macaddress": "D81F12*"
+      }
+    ],
+    "documentation": "https://www.home-assistant.io/integrations/tuya",
+    "integration_type": "hub",
+    "iot_class": "cloud_push",
+    "loggers": [
+      "tuya_iot"
+    ],
+    "requirements": [
+      "tuya-iot-py-sdk==0.6.6"
+    ],
+    "is_built_in": true
+  },
+  "data": {
+    "endpoint": "https://openapi.tuyaeu.com",
+    "auth_type": 0,
+    "country_code": "359",
+    "app_type": "smartlife",
+    "mqtt_connected": true,
+    "disabled_by": null,
+    "disabled_polling": false,
+    "name": "G30 Smart Lock-EU",
+    "model": "EU",
+    "category": "jtmspro",
+    "product_id": "3oe761xu",
+    "product_name": "G30 Smart Lock-EU",
+    "online": true,
+    "sub": true,
+    "time_zone": "+02:00",
+    "active_time": "2023-11-15T20:10:09+00:00",
+    "create_time": "2023-11-15T20:10:10+00:00",
+    "update_time": "2023-12-06T21:06:15+00:00",
+    "function": {
+      "lock_record": {
+        "type": "Raw",
+        "value": {}
+      },
+      "beep_volume": {
+        "type": "Enum",
+        "value": {
+          "range": [
+            "high",
+            "low",
+            "mute"
+          ]
+        }
+      },
+      "automatic_lock": {
+        "type": "Boolean",
+        "value": {}
+      },
+      "auto_lock_time": {
+        "type": "Integer",
+        "value": {
+          "unit": "",
+          "min": 0,
+          "max": 1800,
+          "scale": 0,
+          "step": 1
+        }
+      },
+      "rtc_lock": {
+        "type": "Boolean",
+        "value": {}
+      },
+      "manual_lock": {
+        "type": "Boolean",
+        "value": {}
+      },
+      "synch_method": {
+        "type": "Raw",
+        "value": {}
+      },
+      "guide_page_act": {
+        "type": "Raw",
+        "value": {}
+      },
+      "remote_no_dp_key": {
+        "type": "Raw",
+        "value": {}
+      },
+      "special_function": {
+        "type": "Enum",
+        "value": {
+          "range": [
+            "function1",
+            "function2",
+            "function3",
+            "function4",
+            "function5"
+          ]
+        }
+      },
+      "record": {
+        "type": "Raw",
+        "value": {}
+      },
+      "check_code_set": {
+        "type": "Raw",
+        "value": {}
+      },
+      "ble_unlock_check": {
+        "type": "Raw",
+        "value": {}
+      },
+      "remote_pd_setkey_check": {
+        "type": "Raw",
+        "value": {}
+      },
+      "alarm_volume": {
+        "type": "Enum",
+        "value": {
+          "range": [
+            "mute",
+            "normal",
+            "loud"
+          ]
+        }
+      },
+      "sound_mode": {
+        "type": "Enum",
+        "value": {
+          "range": [
+            "ringtone_0",
+            "ringtone_1",
+            "ringtone_2",
+            "ringtone_3",
+            "ringtone_4",
+            "ringtone_5"
+          ]
+        }
+      },
+      "alarm_switch": {
+        "type": "Boolean",
+        "value": {}
+      }
+    },
+    "status_range": {
+      "residual_electricity": {
+        "type": "Integer",
+        "value": {
+          "min": 0,
+          "max": 100,
+          "scale": 0,
+          "step": 1
+        }
+      },
+      "unlock_key": {
+        "type": "Integer",
+        "value": {
+          "min": 0,
+          "max": 999,
+          "scale": 0,
+          "step": 1
+        }
+      },
+      "unlock_ble": {
+        "type": "Integer",
+        "value": {
+          "min": 0,
+          "max": 999,
+          "scale": 0,
+          "step": 1
+        }
+      },
+      "lock_record": {
+        "type": "Raw",
+        "value": {}
+      },
+      "alarm_lock": {
+        "type": "Enum",
+        "value": {
+          "range": [
+            "wrong_finger",
+            "wrong_password",
+            "wrong_card",
+            "wrong_face",
+            "tongue_bad",
+            "too_hot",
+            "unclosed_time",
+            "tongue_not_out",
+            "pry",
+            "key_in",
+            "low_battery",
+            "power_off",
+            "shock",
+            "defense"
+          ]
+        }
+      },
+      "beep_volume": {
+        "type": "Enum",
+        "value": {
+          "range": [
+            "high",
+            "low",
+            "mute"
+          ]
+        }
+      },
+      "automatic_lock": {
+        "type": "Boolean",
+        "value": {}
+      },
+      "auto_lock_time": {
+        "type": "Integer",
+        "value": {
+          "unit": "",
+          "min": 0,
+          "max": 1800,
+          "scale": 0,
+          "step": 1
+        }
+      },
+      "closed_opened": {
+        "type": "Enum",
+        "value": {
+          "range": [
+            "unknown",
+            "open",
+            "closed"
+          ]
+        }
+      },
+      "rtc_lock": {
+        "type": "Boolean",
+        "value": {}
+      },
+      "manual_lock": {
+        "type": "Boolean",
+        "value": {}
+      },
+      "lock_motor_state": {
+        "type": "Boolean",
+        "value": {}
+      },
+      "synch_method": {
+        "type": "Raw",
+        "value": {}
+      },
+      "guide_page_act": {
+        "type": "Raw",
+        "value": {}
+      },
+      "remote_no_dp_key": {
+        "type": "Raw",
+        "value": {}
+      },
+      "unlock_phone_remote": {
+        "type": "Integer",
+        "value": {
+          "min": 0,
+          "max": 999,
+          "scale": 0,
+          "step": 1
+        }
+      },
+      "unlock_voice_remote": {
+        "type": "Integer",
+        "value": {
+          "min": 0,
+          "max": 999,
+          "scale": 0,
+          "step": 1
+        }
+      },
+      "special_function": {
+        "type": "Enum",
+        "value": {
+          "range": [
+            "function1",
+            "function2",
+            "function3",
+            "function4",
+            "function5"
+          ]
+        }
+      },
+      "record": {
+        "type": "Raw",
+        "value": {}
+      },
+      "check_code_set": {
+        "type": "Raw",
+        "value": {}
+      },
+      "ble_unlock_check": {
+        "type": "Raw",
+        "value": {}
+      },
+      "unlock_record_check": {
+        "type": "Raw",
+        "value": {}
+      },
+      "remote_pd_setkey_check": {
+        "type": "Raw",
+        "value": {}
+      },
+      "alarm_volume": {
+        "type": "Enum",
+        "value": {
+          "range": [
+            "mute",
+            "normal",
+            "loud"
+          ]
+        }
+      },
+      "sound_mode": {
+        "type": "Enum",
+        "value": {
+          "range": [
+            "ringtone_0",
+            "ringtone_1",
+            "ringtone_2",
+            "ringtone_3",
+            "ringtone_4",
+            "ringtone_5"
+          ]
+        }
+      },
+      "alarm_switch": {
+        "type": "Boolean",
+        "value": {}
+      }
+    },
+    "status": {
+      "residual_electricity": 70,
+      "unlock_key": 0,
+      "unlock_ble": 1,
+      "lock_record": "BgAAAAA=",
+      "alarm_lock": "shock",
+      "beep_volume": "high",
+      "automatic_lock": true,
+      "auto_lock_time": 1,
+      "closed_opened": "closed",
+      "rtc_lock": false,
+      "manual_lock": true,
+      "lock_motor_state": false,
+      "synch_method": "",
+      "guide_page_act": "",
+      "remote_no_dp_key": "AAAB",
+      "unlock_phone_remote": 256,
+      "unlock_voice_remote": 256,
+      "special_function": "function3",
+      "record": "//8AATYzODE0MzkwAA==",
+      "check_code_set": "AAH//zYzODE0MzkwAAACAA==",
+      "ble_unlock_check": "AAH//zYzODE0MzkwAWVvP3kAAA==",
+      "unlock_record_check": "AAEAAjM2NTA0MTAxAWVwicY1AAAAHwAB",
+      "remote_pd_setkey_check": "AAH//zYzODE0MzkwAQABAA==",
+      "alarm_volume": "mute",
+      "sound_mode": "ringtone_0",
+      "alarm_switch": false
+    },
+    "home_assistant": {
+      "name": "\u0412\u0440\u0430\u0442\u0430 G30 Smart Lock-EU",
+      "name_by_user": null,
+      "disabled": false,
+      "disabled_by": null,
+      "entities": []
+    }
+  }
+}
