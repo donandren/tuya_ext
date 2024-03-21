@@ -6,8 +6,8 @@ A Home Assistant integration for adding additional Tuya devices support without 
 sp far the plan is to add support for:
 - Tuya IR Smart Remote Control device for specific remotes:
   - climate ir remotes
-  - tv ir remots
+  - tv ir remotes
   - tvbox ir remotes
-- Lockin G30 Smart Lock
+- [Lockin G30 Smart Lock](https://en.lockin.com/pages/g30)
 
 
