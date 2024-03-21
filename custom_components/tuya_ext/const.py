@@ -1,4 +1,5 @@
 """Constants for the Tuya integration."""
+
 from __future__ import annotations
 
 from collections.abc import Callable
@@ -28,7 +29,7 @@ from homeassistant.const import (
     UnitOfVolume,
 )
 
-DOMAIN = "tuya-ext"
+DOMAIN = "tuya_ext"
 LOGGER = logging.getLogger(__package__)
 
 CONF_AUTH_TYPE = "auth_type"
@@ -55,7 +56,7 @@ SMARTLIFE_APP = "smartlife"
 
 PLATFORMS = [
     # Platform.ALARM_CONTROL_PANEL,
-    # Platform.BINARY_SENSOR,
+    Platform.BINARY_SENSOR,
     # Platform.BUTTON,
     # Platform.CAMERA,
     Platform.CLIMATE,
@@ -66,10 +67,13 @@ PLATFORMS = [
     # Platform.NUMBER,
     # Platform.SCENE,
     # Platform.SELECT,
-    # Platform.SENSOR,
+    Platform.SENSOR,
     # Platform.SIREN,
-    # Platform.SWITCH,
+    Platform.SWITCH,
     # Platform.VACUUM,
+    Platform.LOCK,
+    Platform.REMOTE,
+    # Platform.MEDIA_PLAYER,
 ]
 
 
@@ -367,11 +371,21 @@ class DPCode(StrEnum):
     WET = "wet"  # Humidification
     WINDOW_CHECK = "window_check"
     WINDOW_STATE = "window_state"
+    WIND = "wind"
     WINDSPEED = "windspeed"
     WIRELESS_BATTERYLOCK = "wireless_batterylock"
     WIRELESS_ELECTRICITY = "wireless_electricity"
     WORK_MODE = "work_mode"  # Working mode
     WORK_POWER = "work_power"
+    # lock states
+    CLOSED_OPENED = "closed_opened"
+    LOCK_MOTOR_STATE = "lock_motor_state"
+    RESIDUAL_ELECTRICITY = "residual_electricity"
+    ALARM_LOCK = "alarm_lock"
+    BEEP_VOLUME = "beep_volume"
+    AUTOMATIC_LOCK = "automatic_lock"
+    AUTO_LOCK_TIME = "auto_lock_time"
+    DOORBELL_CALL = "doorbell_call"
 
 
 @dataclass

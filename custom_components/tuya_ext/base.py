@@ -145,7 +145,8 @@ class TuyaEntity(Entity):
     def device_info(self) -> DeviceInfo:
         """Return a device description for device registry."""
         return DeviceInfo(
-            identifiers={(DOMAIN, self.device.id)},
+            #identifiers={(DOMAIN, self.device.id)},
+            identifiers={("tuya", self.device.id)},
             manufacturer="Tuya",
             name=self.device.name,
             model=f"{self.device.product_name} ({self.device.product_id})",
@@ -272,4 +273,5 @@ class TuyaEntity(Entity):
     def _send_command(self, commands: list[dict[str, Any]]) -> None:
         """Send command to the device."""
         LOGGER.debug("Sending commands for device %s: %s", self.device.id, commands)
-        self.device_manager.send_commands(self.device.id, commands)
+        result = self.device_manager.send_commands(self.device.id, commands)
+        LOGGER.debug("Sending commands for device %s: result %s", self.device.id, result)

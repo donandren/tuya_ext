@@ -137,7 +137,7 @@ def _async_device_as_dict(hass: HomeAssistant, device: TuyaDevice) -> dict[str, 
     # Gather information how this Tuya device is represented in Home Assistant
     device_registry = dr.async_get(hass)
     entity_registry = er.async_get(hass)
-    hass_device = device_registry.async_get_device(identifiers={(DOMAIN, device.id)})
+    hass_device = device_registry.async_get_device(identifiers={("tuya", device.id)})#{(DOMAIN, device.id)})
     if hass_device:
         data["home_assistant"] = {
             "name": hass_device.name,

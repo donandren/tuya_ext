@@ -3,7 +3,8 @@
   "name": "Tuya extensions",
   "codeowners": ["@Tuya", "@zlinoliver", "@frenck", "@donandren"],
   "config_flow": true,
-  "dependencies": ["ffmpeg"],
+  "after_dependencies": ["tuya"],
+  "dependencies": ["ffmpeg", "tuya"],
   "dhcp": [
     {
       "macaddress": "105A17*"
@@ -43,6 +44,6 @@
   "integration_type": "hub",
   "iot_class": "cloud_push",
   "loggers": ["tuya_iot"],
-  "version": "0.1.0",
-  "requirements": ["tuya-iot-py-sdk==0.6.6"]
+  "version": "0.3.0",
+  "requirements": ["tuya-iot-py-sdk==0.6.6", "tuya-device-sharing-sdk==0.1.9"]
 }
