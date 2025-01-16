@@ -18,8 +18,7 @@ from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
 from . import HomeAssistantTuyaData
 from .base import TuyaEntity
-from .const import DOMAIN, TUYA_DISCOVERY_NEW, DPCode, LOGGER
-
+from .const import DOMAIN, TUYA_DISCOVERY_NEW, DPCode, TUYA_HA_SIGNAL_UPDATE_ENTITY, LOGGER
 
 @dataclass
 class TuyaBinarySensorEntityDescription(BinarySensorEntityDescription):
@@ -161,15 +160,26 @@ class DoorbellSensorEntity(TuyaBinarySensorEntity):
         self.device_manager._on_device_report(self.device.id, status) 
         self.turn_off_next = 0
 
-    def update(self):
+    async def async_update(self):
         if self.is_on and self.turn_off_next > 0:
             self.turn_off_next = self.turn_off_next - 1
             if self.turn_off_next < 1:
                 self.set_status_off()
 
-    def async_write_ha_state(self):
+    async def async_added_to_hass(self) -> None:
+        """Call when entity is added to hass."""
+        self.async_on_remove(
+            async_dispatcher_connect(
+                self.hass,
+                f"{TUYA_HA_SIGNAL_UPDATE_ENTITY}_{self.device.id}",
+                self.async_write_ha_state_doorbell,
+            )
+        )
+
+    def async_write_ha_state_doorbell(self):
         # LOGGER.info(f"Doorbell.async_write_ha_state() {self.device.status}")
         if self.is_on:
             self.turn_off_next = 2 # after 31-60 seconds ring will stop
-        super().async_write_ha_state()
+        #super().async_write_ha_state()
+        self.schedule_update_ha_state()
 

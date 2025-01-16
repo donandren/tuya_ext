@@ -1,8 +1,8 @@
-from homeassistant.backports.enum import StrEnum
+import enum
 from homeassistant.components.climate import HVACMode
 
 
-class IR_DPCODE(StrEnum):
+class IR_DPCODE(enum.StrEnum):
     """Data Point Codes used by wifi ir's.
     https://developer.tuya.com/en/docs/iot/standarddescription?id=K9i5ql6waswzq
     """
@@ -15,7 +15,7 @@ class IR_DPCODE(StrEnum):
     TEMP = "T"  # ac function temp (T) ENUM -> Integer 16-30
 
 
-class IR_MEDIAREMOTE_DPCODE(StrEnum):
+class IR_MEDIAREMOTE_DPCODE(enum.StrEnum):
     PLAY = "Play"
     NEXT = "Next"
     PAUSE = "Pause"
