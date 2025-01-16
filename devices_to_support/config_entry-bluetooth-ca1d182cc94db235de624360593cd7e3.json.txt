@@ -1,0 +1,1190 @@
+{
+  "home_assistant": {
+    "installation_type": "Home Assistant OS",
+    "version": "2023.12.1",
+    "dev": false,
+    "hassio": true,
+    "virtualenv": false,
+    "python_version": "3.11.6",
+    "docker": true,
+    "arch": "x86_64",
+    "timezone": "Europe/Sofia",
+    "os_name": "Linux",
+    "os_version": "6.1.63-haos",
+    "supervisor": "2023.11.6",
+    "host_os": "Home Assistant OS 11.2",
+    "docker_version": "24.0.7",
+    "chassis": "vm",
+    "run_as_root": true
+  },
+  "custom_components": {
+    "pax_ble": {
+      "version": "1.0.0",
+      "requirements": []
+    },
+    "hacs": {
+      "version": "1.33.0",
+      "requirements": [
+        "aiogithubapi>=22.10.1"
+      ]
+    },
+    "localtuya": {
+      "version": "5.2.1",
+      "requirements": []
+    },
+    "tuya_ble": {
+      "version": "0.1.8",
+      "requirements": [
+        "tuya-iot-py-sdk==0.6.6",
+        "pycountry==22.3.5"
+      ]
+    },
+    "ble_monitor": {
+      "version": "12.6.4",
+      "requirements": [
+        "pycryptodomex>=3.18.0",
+        "janus>=1.0.0",
+        "aioblescan>=0.2.14",
+        "btsocket>=0.2.0",
+        "pyric>=0.1.6.3"
+      ]
+    },
+    "alexa_media": {
+      "version": "4.8.0",
+      "requirements": [
+        "alexapy==1.27.10",
+        "packaging>=20.3",
+        "wrapt>=1.14.0"
+      ]
+    },
+    "smartlife": {
+      "version": "0.1.0",
+      "requirements": [
+        "tuya-device-sharing-sdk==0.1.9"
+      ]
+    },
+    "google_home": {
+      "version": "1.10.2",
+      "requirements": [
+        "glocaltokens==0.7.0"
+      ]
+    },
+    "tuya_ext": {
+      "version": "0.1.0",
+      "requirements": [
+        "tuya-iot-py-sdk==0.6.6"
+      ]
+    },
+    "tuya_smart_ir_ac": {
+      "version": "0.1.1",
+      "requirements": [
+        "tuya-connector-python==0.1.2"
+      ]
+    }
+  },
+  "integration_manifest": {
+    "domain": "bluetooth",
+    "name": "Bluetooth",
+    "codeowners": [
+      "@bdraco"
+    ],
+    "config_flow": true,
+    "dependencies": [
+      "usb"
+    ],
+    "documentation": "https://www.home-assistant.io/integrations/bluetooth",
+    "iot_class": "local_push",
+    "loggers": [
+      "btsocket",
+      "bleak_retry_connector",
+      "bluetooth_adapters",
+      "bluetooth_auto_recovery"
+    ],
+    "quality_scale": "internal",
+    "requirements": [
+      "bleak==0.21.1",
+      "bleak-retry-connector==3.3.0",
+      "bluetooth-adapters==0.16.1",
+      "bluetooth-auto-recovery==1.2.3",
+      "bluetooth-data-tools==1.15.0",
+      "dbus-fast==2.14.0"
+    ],
+    "is_built_in": true
+  },
+  "data": {
+    "manager": {
+      "adapters": {
+        "hci0": {
+          "address": "8C:88:4B:25:44:1C",
+          "sw_version": "homeassistant",
+          "hw_version": "usb:v1D6Bp0246d0546",
+          "passive_scan": true,
+          "manufacturer": "Realtek",
+          "product": "Bluetooth 5.3 Radio",
+          "vendor_id": "0bda",
+          "product_id": "a729"
+        }
+      },
+      "slot_manager": {
+        "manager": true,
+        "adapter_slots": {
+          "hci0": 5
+        },
+        "allocations_by_adapter": {
+          "hci0": []
+        }
+      },
+      "scanners": [
+        {
+          "name": "hci0 (8C:88:4B:25:44:1C)",
+          "start_time": 47050.485301792,
+          "source": "8C:88:4B:25:44:1C",
+          "scanning": true,
+          "type": "HaScanner",
+          "last_detection": 47384.897159186,
+          "monotonic_time": 47432.858565361,
+          "discovered_devices_and_advertisement_data": [
+            {
+              "name": "CD-5B-6A-75-6A-A9",
+              "address": "CD:5B:6A:75:6A:A9",
+              "rssi": -74,
+              "advertisement_data": [
+                null,
+                {},
+                {
+                  "0000feed-0000-1000-8000-00805f9b34fb": {
+                    "__type": "<class 'bytes'>",
+                    "repr": "b'\\x02\\x00\\x0f\\xcbO\\xe6\\xa1\\x9c\\x9cl'"
+                  }
+                },
+                [
+                  "0000feed-0000-1000-8000-00805f9b34fb"
+                ],
+                null,
+                -74,
+                [
+                  "/org/bluez/hci0/dev_CD_5B_6A_75_6A_A9",
+                  {
+                    "Address": "CD:5B:6A:75:6A:A9",
+                    "AddressType": "random",
+                    "Alias": "CD-5B-6A-75-6A-A9",
+                    "Paired": false,
+                    "Bonded": false,
+                    "Trusted": false,
+                    "Blocked": false,
+                    "LegacyPairing": false,
+                    "RSSI": -74,
+                    "Connected": false,
+                    "UUIDs": [
+                      "0000feed-0000-1000-8000-00805f9b34fb"
+                    ],
+                    "Adapter": "/org/bluez/hci0",
+                    "ServiceData": {
+                      "0000feed-0000-1000-8000-00805f9b34fb": {
+                        "__type": "<class 'bytearray'>",
+                        "repr": "bytearray(b'\\x02\\x00\\x0f\\xcbO\\xe6\\xa1\\x9c\\x9cl')"
+                      }
+                    },
+                    "ServicesResolved": false,
+                    "AdvertisingFlags": {
+                      "__type": "<class 'bytearray'>",
+                      "repr": "bytearray(b'\\x06')"
+                    }
+                  }
+                ]
+              ],
+              "details": {
+                "path": "/org/bluez/hci0/dev_CD_5B_6A_75_6A_A9",
+                "props": {
+                  "Address": "CD:5B:6A:75:6A:A9",
+                  "AddressType": "random",
+                  "Alias": "CD-5B-6A-75-6A-A9",
+                  "Paired": false,
+                  "Bonded": false,
+                  "Trusted": false,
+                  "Blocked": false,
+                  "LegacyPairing": false,
+                  "RSSI": -74,
+                  "Connected": false,
+                  "UUIDs": [
+                    "0000feed-0000-1000-8000-00805f9b34fb"
+                  ],
+                  "Adapter": "/org/bluez/hci0",
+                  "ServiceData": {
+                    "0000feed-0000-1000-8000-00805f9b34fb": {
+                      "__type": "<class 'bytearray'>",
+                      "repr": "bytearray(b'\\x02\\x00\\x8e\\x87\\x05\\xc3\\xb51\\xdd:')"
+                    }
+                  },
+                  "ServicesResolved": false,
+                  "AdvertisingFlags": {
+                    "__type": "<class 'bytearray'>",
+                    "repr": "bytearray(b'\\x06')"
+                  }
+                }
+              }
+            },
+            {
+              "name": "TY",
+              "address": "DC:23:4E:9C:E8:DE",
+              "rssi": -78,
+              "advertisement_data": [
+                "TY",
+                {},
+                {
+                  "0000a201-0000-1000-8000-00805f9b34fb": {
+                    "__type": "<class 'bytes'>",
+                    "repr": "b'\\x00R\\xf3@\\xf6\\xcc\\x9f\\xaa\\x7f'"
+                  }
+                },
+                [
+                  "00001800-0000-1000-8000-00805f9b34fb",
+                  "00001801-0000-1000-8000-00805f9b34fb",
+                  "00001910-0000-1000-8000-00805f9b34fb",
+                  "0000a201-0000-1000-8000-00805f9b34fb"
+                ],
+                null,
+                -78,
+                [
+                  "/org/bluez/hci0/dev_DC_23_4E_9C_E8_DE",
+                  {
+                    "Address": "DC:23:4E:9C:E8:DE",
+                    "AddressType": "public",
+                    "Name": "TY",
+                    "Alias": "TY",
+                    "Paired": false,
+                    "Bonded": false,
+                    "Trusted": false,
+                    "Blocked": false,
+                    "LegacyPairing": false,
+                    "RSSI": -78,
+                    "Connected": true,
+                    "UUIDs": [
+                      "00001800-0000-1000-8000-00805f9b34fb",
+                      "00001801-0000-1000-8000-00805f9b34fb",
+                      "00001910-0000-1000-8000-00805f9b34fb",
+                      "0000a201-0000-1000-8000-00805f9b34fb"
+                    ],
+                    "Adapter": "/org/bluez/hci0",
+                    "ServiceData": {
+                      "0000a201-0000-1000-8000-00805f9b34fb": {
+                        "__type": "<class 'bytearray'>",
+                        "repr": "bytearray(b'\\x00R\\xf3@\\xf6\\xcc\\x9f\\xaa\\x7f')"
+                      }
+                    },
+                    "ServicesResolved": true,
+                    "AdvertisingFlags": {
+                      "__type": "<class 'bytearray'>",
+                      "repr": "bytearray(b'\\x06')"
+                    }
+                  }
+                ]
+              ],
+              "details": {
+                "path": "/org/bluez/hci0/dev_DC_23_4E_9C_E8_DE",
+                "props": {
+                  "Address": "DC:23:4E:9C:E8:DE",
+                  "AddressType": "public",
+                  "Name": "TY",
+                  "Alias": "TY",
+                  "Paired": false,
+                  "Bonded": false,
+                  "Trusted": false,
+                  "Blocked": false,
+                  "LegacyPairing": false,
+                  "RSSI": -78,
+                  "Connected": false,
+                  "UUIDs": [
+                    "0000a201-0000-1000-8000-00805f9b34fb"
+                  ],
+                  "Adapter": "/org/bluez/hci0",
+                  "ServiceData": {
+                    "0000a201-0000-1000-8000-00805f9b34fb": {
+                      "__type": "<class 'bytearray'>",
+                      "repr": "bytearray(b'\\x00R\\xf3@\\xf6\\xcc\\x9f\\xaa\\x7f')"
+                    }
+                  },
+                  "ServicesResolved": false,
+                  "AdvertisingFlags": {
+                    "__type": "<class 'bytearray'>",
+                    "repr": "bytearray(b'\\x06')"
+                  }
+                }
+              }
+            }
+          ],
+          "adapter": "hci0"
+        }
+      ],
+      "connectable_history": [
+        {
+          "name": "TY",
+          "address": "DC:23:4E:9C:E8:DE",
+          "rssi": -78,
+          "manufacturer_data": {},
+          "service_data": {
+            "0000a201-0000-1000-8000-00805f9b34fb": {
+              "__type": "<class 'bytes'>",
+              "repr": "b'\\x00R\\xf3@\\xf6\\xcc\\x9f\\xaa\\x7f'"
+            }
+          },
+          "service_uuids": [
+            "00001800-0000-1000-8000-00805f9b34fb",
+            "00001801-0000-1000-8000-00805f9b34fb",
+            "00001910-0000-1000-8000-00805f9b34fb",
+            "0000a201-0000-1000-8000-00805f9b34fb"
+          ],
+          "source": "8C:88:4B:25:44:1C",
+          "advertisement": [
+            "TY",
+            {},
+            {
+              "0000a201-0000-1000-8000-00805f9b34fb": {
+                "__type": "<class 'bytes'>",
+                "repr": "b'\\x00R\\xf3@\\xf6\\xcc\\x9f\\xaa\\x7f'"
+              }
+            },
+            [
+              "00001800-0000-1000-8000-00805f9b34fb",
+              "00001801-0000-1000-8000-00805f9b34fb",
+              "00001910-0000-1000-8000-00805f9b34fb",
+              "0000a201-0000-1000-8000-00805f9b34fb"
+            ],
+            null,
+            -78,
+            [
+              "/org/bluez/hci0/dev_DC_23_4E_9C_E8_DE",
+              {
+                "Address": "DC:23:4E:9C:E8:DE",
+                "AddressType": "public",
+                "Name": "TY",
+                "Alias": "TY",
+                "Paired": false,
+                "Bonded": false,
+                "Trusted": false,
+                "Blocked": false,
+                "LegacyPairing": false,
+                "RSSI": -78,
+                "Connected": true,
+                "UUIDs": [
+                  "00001800-0000-1000-8000-00805f9b34fb",
+                  "00001801-0000-1000-8000-00805f9b34fb",
+                  "00001910-0000-1000-8000-00805f9b34fb",
+                  "0000a201-0000-1000-8000-00805f9b34fb"
+                ],
+                "Adapter": "/org/bluez/hci0",
+                "ServiceData": {
+                  "0000a201-0000-1000-8000-00805f9b34fb": {
+                    "__type": "<class 'bytearray'>",
+                    "repr": "bytearray(b'\\x00R\\xf3@\\xf6\\xcc\\x9f\\xaa\\x7f')"
+                  }
+                },
+                "ServicesResolved": true,
+                "AdvertisingFlags": {
+                  "__type": "<class 'bytearray'>",
+                  "repr": "bytearray(b'\\x06')"
+                }
+              }
+            ]
+          ],
+          "device": {
+            "__type": "<class 'bleak.backends.device.BLEDevice'>",
+            "repr": "BLEDevice(DC:23:4E:9C:E8:DE, TY)"
+          },
+          "connectable": true,
+          "time": 47384.897159186
+        },
+        {
+          "name": "LJ",
+          "address": "DC:23:4F:68:F4:A5",
+          "rssi": -80,
+          "manufacturer_data": {},
+          "service_data": {
+            "0000a201-0000-1000-8000-00805f9b34fb": {
+              "__type": "<class 'bytes'>",
+              "repr": "b'\\x00!\\xac=\\x02\\xe9;\\xa6\\xf3'"
+            }
+          },
+          "service_uuids": [
+            "0000a201-0000-1000-8000-00805f9b34fb"
+          ],
+          "source": "8C:88:4B:25:44:1C",
+          "advertisement": [
+            "LJ",
+            {},
+            {
+              "0000a201-0000-1000-8000-00805f9b34fb": {
+                "__type": "<class 'bytes'>",
+                "repr": "b'\\x00!\\xac=\\x02\\xe9;\\xa6\\xf3'"
+              }
+            },
+            [
+              "0000a201-0000-1000-8000-00805f9b34fb"
+            ],
+            null,
+            -80,
+            [
+              "/org/bluez/hci0/dev_DC_23_4F_68_F4_A5",
+              {
+                "Address": "DC:23:4F:68:F4:A5",
+                "AddressType": "public",
+                "Name": "LJ",
+                "Alias": "LJ",
+                "Paired": false,
+                "Bonded": false,
+                "Trusted": false,
+                "Blocked": false,
+                "LegacyPairing": false,
+                "RSSI": -80,
+                "Connected": false,
+                "UUIDs": [
+                  "0000a201-0000-1000-8000-00805f9b34fb"
+                ],
+                "Adapter": "/org/bluez/hci0",
+                "ServiceData": {
+                  "0000a201-0000-1000-8000-00805f9b34fb": {
+                    "__type": "<class 'bytearray'>",
+                    "repr": "bytearray(b'\\x00!\\xac=\\x02\\xe9;\\xa6\\xf3')"
+                  }
+                },
+                "ServicesResolved": false,
+                "AdvertisingFlags": {
+                  "__type": "<class 'bytearray'>",
+                  "repr": "bytearray(b'\\x06')"
+                }
+              }
+            ]
+          ],
+          "device": {
+            "__type": "<class 'bleak.backends.device.BLEDevice'>",
+            "repr": "BLEDevice(DC:23:4F:68:F4:A5, LJ)"
+          },
+          "connectable": true,
+          "time": 47348.60285133
+        },
+        {
+          "name": "CD-5B-6A-75-6A-A9",
+          "address": "CD:5B:6A:75:6A:A9",
+          "rssi": -74,
+          "manufacturer_data": {},
+          "service_data": {
+            "0000feed-0000-1000-8000-00805f9b34fb": {
+              "__type": "<class 'bytes'>",
+              "repr": "b'\\x02\\x00\\x0f\\xcbO\\xe6\\xa1\\x9c\\x9cl'"
+            }
+          },
+          "service_uuids": [
+            "0000feed-0000-1000-8000-00805f9b34fb"
+          ],
+          "source": "8C:88:4B:25:44:1C",
+          "advertisement": [
+            null,
+            {},
+            {
+              "0000feed-0000-1000-8000-00805f9b34fb": {
+                "__type": "<class 'bytes'>",
+                "repr": "b'\\x02\\x00\\x0f\\xcbO\\xe6\\xa1\\x9c\\x9cl'"
+              }
+            },
+            [
+              "0000feed-0000-1000-8000-00805f9b34fb"
+            ],
+            null,
+            -74,
+            [
+              "/org/bluez/hci0/dev_CD_5B_6A_75_6A_A9",
+              {
+                "Address": "CD:5B:6A:75:6A:A9",
+                "AddressType": "random",
+                "Alias": "CD-5B-6A-75-6A-A9",
+                "Paired": false,
+                "Bonded": false,
+                "Trusted": false,
+                "Blocked": false,
+                "LegacyPairing": false,
+                "RSSI": -74,
+                "Connected": false,
+                "UUIDs": [
+                  "0000feed-0000-1000-8000-00805f9b34fb"
+                ],
+                "Adapter": "/org/bluez/hci0",
+                "ServiceData": {
+                  "0000feed-0000-1000-8000-00805f9b34fb": {
+                    "__type": "<class 'bytearray'>",
+                    "repr": "bytearray(b'\\x02\\x00\\x0f\\xcbO\\xe6\\xa1\\x9c\\x9cl')"
+                  }
+                },
+                "ServicesResolved": false,
+                "AdvertisingFlags": {
+                  "__type": "<class 'bytearray'>",
+                  "repr": "bytearray(b'\\x06')"
+                }
+              }
+            ]
+          ],
+          "device": {
+            "__type": "<class 'bleak.backends.device.BLEDevice'>",
+            "repr": "BLEDevice(CD:5B:6A:75:6A:A9, CD-5B-6A-75-6A-A9)"
+          },
+          "connectable": true,
+          "time": 47380.117118666
+        },
+        {
+          "name": "PJ",
+          "address": "DC:23:4F:7F:CD:ED",
+          "rssi": -78,
+          "manufacturer_data": {},
+          "service_data": {
+            "0000a201-0000-1000-8000-00805f9b34fb": {
+              "__type": "<class 'bytes'>",
+              "repr": "b'\\x00\\xf3i\\xf7iGC{\\x9f'"
+            }
+          },
+          "service_uuids": [
+            "0000a201-0000-1000-8000-00805f9b34fb"
+          ],
+          "source": "8C:88:4B:25:44:1C",
+          "advertisement": [
+            "PJ",
+            {},
+            {
+              "0000a201-0000-1000-8000-00805f9b34fb": {
+                "__type": "<class 'bytes'>",
+                "repr": "b'\\x00\\xf3i\\xf7iGC{\\x9f'"
+              }
+            },
+            [
+              "0000a201-0000-1000-8000-00805f9b34fb"
+            ],
+            null,
+            -78,
+            [
+              "/org/bluez/hci0/dev_DC_23_4F_7F_CD_ED",
+              {
+                "Address": "DC:23:4F:7F:CD:ED",
+                "AddressType": "public",
+                "Name": "PJ",
+                "Alias": "PJ",
+                "Paired": false,
+                "Bonded": false,
+                "Trusted": false,
+                "Blocked": false,
+                "LegacyPairing": false,
+                "RSSI": -78,
+                "Connected": false,
+                "UUIDs": [
+                  "0000a201-0000-1000-8000-00805f9b34fb"
+                ],
+                "Adapter": "/org/bluez/hci0",
+                "ServiceData": {
+                  "0000a201-0000-1000-8000-00805f9b34fb": {
+                    "__type": "<class 'bytearray'>",
+                    "repr": "bytearray(b'\\x00\\xf3i\\xf7iGC{\\x9f')"
+                  }
+                },
+                "ServicesResolved": false,
+                "AdvertisingFlags": {
+                  "__type": "<class 'bytearray'>",
+                  "repr": "bytearray(b'\\x06')"
+                }
+              }
+            ]
+          ],
+          "device": {
+            "__type": "<class 'bleak.backends.device.BLEDevice'>",
+            "repr": "BLEDevice(DC:23:4F:7F:CD:ED, PJ)"
+          },
+          "connectable": true,
+          "time": 47348.679851984
+        }
+      ],
+      "all_history": [
+        {
+          "name": "TY",
+          "address": "DC:23:4E:9C:E8:DE",
+          "rssi": -78,
+          "manufacturer_data": {},
+          "service_data": {
+            "0000a201-0000-1000-8000-00805f9b34fb": {
+              "__type": "<class 'bytes'>",
+              "repr": "b'\\x00R\\xf3@\\xf6\\xcc\\x9f\\xaa\\x7f'"
+            }
+          },
+          "service_uuids": [
+            "00001800-0000-1000-8000-00805f9b34fb",
+            "00001801-0000-1000-8000-00805f9b34fb",
+            "00001910-0000-1000-8000-00805f9b34fb",
+            "0000a201-0000-1000-8000-00805f9b34fb"
+          ],
+          "source": "8C:88:4B:25:44:1C",
+          "advertisement": [
+            "TY",
+            {},
+            {
+              "0000a201-0000-1000-8000-00805f9b34fb": {
+                "__type": "<class 'bytes'>",
+                "repr": "b'\\x00R\\xf3@\\xf6\\xcc\\x9f\\xaa\\x7f'"
+              }
+            },
+            [
+              "00001800-0000-1000-8000-00805f9b34fb",
+              "00001801-0000-1000-8000-00805f9b34fb",
+              "00001910-0000-1000-8000-00805f9b34fb",
+              "0000a201-0000-1000-8000-00805f9b34fb"
+            ],
+            null,
+            -78,
+            [
+              "/org/bluez/hci0/dev_DC_23_4E_9C_E8_DE",
+              {
+                "Address": "DC:23:4E:9C:E8:DE",
+                "AddressType": "public",
+                "Name": "TY",
+                "Alias": "TY",
+                "Paired": false,
+                "Bonded": false,
+                "Trusted": false,
+                "Blocked": false,
+                "LegacyPairing": false,
+                "RSSI": -78,
+                "Connected": true,
+                "UUIDs": [
+                  "00001800-0000-1000-8000-00805f9b34fb",
+                  "00001801-0000-1000-8000-00805f9b34fb",
+                  "00001910-0000-1000-8000-00805f9b34fb",
+                  "0000a201-0000-1000-8000-00805f9b34fb"
+                ],
+                "Adapter": "/org/bluez/hci0",
+                "ServiceData": {
+                  "0000a201-0000-1000-8000-00805f9b34fb": {
+                    "__type": "<class 'bytearray'>",
+                    "repr": "bytearray(b'\\x00R\\xf3@\\xf6\\xcc\\x9f\\xaa\\x7f')"
+                  }
+                },
+                "ServicesResolved": true,
+                "AdvertisingFlags": {
+                  "__type": "<class 'bytearray'>",
+                  "repr": "bytearray(b'\\x06')"
+                }
+              }
+            ]
+          ],
+          "device": {
+            "__type": "<class 'bleak.backends.device.BLEDevice'>",
+            "repr": "BLEDevice(DC:23:4E:9C:E8:DE, TY)"
+          },
+          "connectable": true,
+          "time": 47384.897159186
+        },
+        {
+          "name": "LJ",
+          "address": "DC:23:4F:68:F4:A5",
+          "rssi": -80,
+          "manufacturer_data": {},
+          "service_data": {
+            "0000a201-0000-1000-8000-00805f9b34fb": {
+              "__type": "<class 'bytes'>",
+              "repr": "b'\\x00!\\xac=\\x02\\xe9;\\xa6\\xf3'"
+            }
+          },
+          "service_uuids": [
+            "0000a201-0000-1000-8000-00805f9b34fb"
+          ],
+          "source": "8C:88:4B:25:44:1C",
+          "advertisement": [
+            "LJ",
+            {},
+            {
+              "0000a201-0000-1000-8000-00805f9b34fb": {
+                "__type": "<class 'bytes'>",
+                "repr": "b'\\x00!\\xac=\\x02\\xe9;\\xa6\\xf3'"
+              }
+            },
+            [
+              "0000a201-0000-1000-8000-00805f9b34fb"
+            ],
+            null,
+            -80,
+            [
+              "/org/bluez/hci0/dev_DC_23_4F_68_F4_A5",
+              {
+                "Address": "DC:23:4F:68:F4:A5",
+                "AddressType": "public",
+                "Name": "LJ",
+                "Alias": "LJ",
+                "Paired": false,
+                "Bonded": false,
+                "Trusted": false,
+                "Blocked": false,
+                "LegacyPairing": false,
+                "RSSI": -80,
+                "Connected": false,
+                "UUIDs": [
+                  "0000a201-0000-1000-8000-00805f9b34fb"
+                ],
+                "Adapter": "/org/bluez/hci0",
+                "ServiceData": {
+                  "0000a201-0000-1000-8000-00805f9b34fb": {
+                    "__type": "<class 'bytearray'>",
+                    "repr": "bytearray(b'\\x00!\\xac=\\x02\\xe9;\\xa6\\xf3')"
+                  }
+                },
+                "ServicesResolved": false,
+                "AdvertisingFlags": {
+                  "__type": "<class 'bytearray'>",
+                  "repr": "bytearray(b'\\x06')"
+                }
+              }
+            ]
+          ],
+          "device": {
+            "__type": "<class 'bleak.backends.device.BLEDevice'>",
+            "repr": "BLEDevice(DC:23:4F:68:F4:A5, LJ)"
+          },
+          "connectable": true,
+          "time": 47348.60285133
+        },
+        {
+          "name": "PJ",
+          "address": "DC:23:4F:7F:CD:ED",
+          "rssi": -78,
+          "manufacturer_data": {},
+          "service_data": {
+            "0000a201-0000-1000-8000-00805f9b34fb": {
+              "__type": "<class 'bytes'>",
+              "repr": "b'\\x00\\xf3i\\xf7iGC{\\x9f'"
+            }
+          },
+          "service_uuids": [
+            "0000a201-0000-1000-8000-00805f9b34fb"
+          ],
+          "source": "8C:88:4B:25:44:1C",
+          "advertisement": [
+            "PJ",
+            {},
+            {
+              "0000a201-0000-1000-8000-00805f9b34fb": {
+                "__type": "<class 'bytes'>",
+                "repr": "b'\\x00\\xf3i\\xf7iGC{\\x9f'"
+              }
+            },
+            [
+              "0000a201-0000-1000-8000-00805f9b34fb"
+            ],
+            null,
+            -78,
+            [
+              "/org/bluez/hci0/dev_DC_23_4F_7F_CD_ED",
+              {
+                "Address": "DC:23:4F:7F:CD:ED",
+                "AddressType": "public",
+                "Name": "PJ",
+                "Alias": "PJ",
+                "Paired": false,
+                "Bonded": false,
+                "Trusted": false,
+                "Blocked": false,
+                "LegacyPairing": false,
+                "RSSI": -78,
+                "Connected": false,
+                "UUIDs": [
+                  "0000a201-0000-1000-8000-00805f9b34fb"
+                ],
+                "Adapter": "/org/bluez/hci0",
+                "ServiceData": {
+                  "0000a201-0000-1000-8000-00805f9b34fb": {
+                    "__type": "<class 'bytearray'>",
+                    "repr": "bytearray(b'\\x00\\xf3i\\xf7iGC{\\x9f')"
+                  }
+                },
+                "ServicesResolved": false,
+                "AdvertisingFlags": {
+                  "__type": "<class 'bytearray'>",
+                  "repr": "bytearray(b'\\x06')"
+                }
+              }
+            ]
+          ],
+          "device": {
+            "__type": "<class 'bleak.backends.device.BLEDevice'>",
+            "repr": "BLEDevice(DC:23:4F:7F:CD:ED, PJ)"
+          },
+          "connectable": true,
+          "time": 47348.679851984
+        },
+        {
+          "name": "CD-5B-6A-75-6A-A9",
+          "address": "CD:5B:6A:75:6A:A9",
+          "rssi": -74,
+          "manufacturer_data": {},
+          "service_data": {
+            "0000feed-0000-1000-8000-00805f9b34fb": {
+              "__type": "<class 'bytes'>",
+              "repr": "b'\\x02\\x00\\x0f\\xcbO\\xe6\\xa1\\x9c\\x9cl'"
+            }
+          },
+          "service_uuids": [
+            "0000feed-0000-1000-8000-00805f9b34fb"
+          ],
+          "source": "8C:88:4B:25:44:1C",
+          "advertisement": [
+            null,
+            {},
+            {
+              "0000feed-0000-1000-8000-00805f9b34fb": {
+                "__type": "<class 'bytes'>",
+                "repr": "b'\\x02\\x00\\x0f\\xcbO\\xe6\\xa1\\x9c\\x9cl'"
+              }
+            },
+            [
+              "0000feed-0000-1000-8000-00805f9b34fb"
+            ],
+            null,
+            -74,
+            [
+              "/org/bluez/hci0/dev_CD_5B_6A_75_6A_A9",
+              {
+                "Address": "CD:5B:6A:75:6A:A9",
+                "AddressType": "random",
+                "Alias": "CD-5B-6A-75-6A-A9",
+                "Paired": false,
+                "Bonded": false,
+                "Trusted": false,
+                "Blocked": false,
+                "LegacyPairing": false,
+                "RSSI": -74,
+                "Connected": false,
+                "UUIDs": [
+                  "0000feed-0000-1000-8000-00805f9b34fb"
+                ],
+                "Adapter": "/org/bluez/hci0",
+                "ServiceData": {
+                  "0000feed-0000-1000-8000-00805f9b34fb": {
+                    "__type": "<class 'bytearray'>",
+                    "repr": "bytearray(b'\\x02\\x00\\x0f\\xcbO\\xe6\\xa1\\x9c\\x9cl')"
+                  }
+                },
+                "ServicesResolved": false,
+                "AdvertisingFlags": {
+                  "__type": "<class 'bytearray'>",
+                  "repr": "bytearray(b'\\x06')"
+                }
+              }
+            ]
+          ],
+          "device": {
+            "__type": "<class 'bleak.backends.device.BLEDevice'>",
+            "repr": "BLEDevice(CD:5B:6A:75:6A:A9, CD-5B-6A-75-6A-A9)"
+          },
+          "connectable": true,
+          "time": 47380.117118666
+        }
+      ],
+      "advertisement_tracker": {
+        "intervals": {
+          "DC:23:4E:9C:E8:DE": 118.32502577600098
+        },
+        "fallback_intervals": {},
+        "sources": {
+          "DC:23:4E:9C:E8:DE": "8C:88:4B:25:44:1C",
+          "DC:23:4F:68:F4:A5": "8C:88:4B:25:44:1C",
+          "DC:23:4F:7F:CD:ED": "8C:88:4B:25:44:1C",
+          "CD:5B:6A:75:6A:A9": "8C:88:4B:25:44:1C"
+        },
+        "timings": {
+          "DC:23:4F:68:F4:A5": [
+            46932.394278035,
+            47056.903357163,
+            47176.256382563,
+            47237.663907318,
+            47348.60285133
+          ],
+          "DC:23:4F:7F:CD:ED": [
+            46933.712289517,
+            47056.776356068,
+            47127.845967593,
+            47173.402358131,
+            47247.821993961,
+            47348.679851984
+          ],
+          "CD:5B:6A:75:6A:A9": [
+            46950.682437235,
+            47063.858417139,
+            47122.445921229,
+            47173.176356197,
+            47247.406990422,
+            47348.902853877,
+            47380.117118666
+          ]
+        }
+      }
+    },
+    "adapters": {
+      "hci0": {
+        "address": "8C:88:4B:25:44:1C",
+        "sw_version": "homeassistant",
+        "hw_version": "usb:v1D6Bp0246d0546",
+        "passive_scan": true,
+        "manufacturer": "Realtek",
+        "product": "Bluetooth 5.3 Radio",
+        "vendor_id": "0bda",
+        "product_id": "a729"
+      }
+    },
+    "dbus": {
+      "/org/bluez": {
+        "org.freedesktop.DBus.Introspectable": {},
+        "org.bluez.AgentManager1": {},
+        "org.bluez.ProfileManager1": {}
+      },
+      "/org/bluez/hci0": {
+        "org.freedesktop.DBus.Introspectable": {},
+        "org.bluez.Adapter1": {
+          "Address": "8C:88:4B:25:44:1C",
+          "AddressType": "public",
+          "Name": "homeassistant",
+          "Alias": "homeassistant",
+          "Class": 7077888,
+          "Powered": true,
+          "PowerState": "on",
+          "Discoverable": false,
+          "DiscoverableTimeout": 180,
+          "Pairable": false,
+          "PairableTimeout": 0,
+          "Discovering": false,
+          "UUIDs": [
+            "0000110e-0000-1000-8000-00805f9b34fb",
+            "00001200-0000-1000-8000-00805f9b34fb",
+            "0000111f-0000-1000-8000-00805f9b34fb",
+            "0000110b-0000-1000-8000-00805f9b34fb",
+            "00001108-0000-1000-8000-00805f9b34fb",
+            "0000110c-0000-1000-8000-00805f9b34fb",
+            "0000184f-0000-1000-8000-00805f9b34fb",
+            "00001800-0000-1000-8000-00805f9b34fb",
+            "00001801-0000-1000-8000-00805f9b34fb",
+            "00001844-0000-1000-8000-00805f9b34fb",
+            "0000180a-0000-1000-8000-00805f9b34fb",
+            "0000184d-0000-1000-8000-00805f9b34fb",
+            "00001845-0000-1000-8000-00805f9b34fb",
+            "0000110a-0000-1000-8000-00805f9b34fb"
+          ],
+          "Modalias": "usb:v1D6Bp0246d0546",
+          "Roles": [
+            "central",
+            "peripheral"
+          ]
+        },
+        "org.freedesktop.DBus.Properties": {},
+        "org.bluez.BatteryProviderManager1": {},
+        "org.bluez.GattManager1": {},
+        "org.bluez.AdvertisementMonitorManager1": {
+          "SupportedMonitorTypes": [
+            "or_patterns"
+          ],
+          "SupportedFeatures": []
+        },
+        "org.bluez.Media1": {
+          "SupportedUUIDs": [
+            "0000110a-0000-1000-8000-00805f9b34fb",
+            "0000110b-0000-1000-8000-00805f9b34fb"
+          ]
+        },
+        "org.bluez.NetworkServer1": {},
+        "org.bluez.LEAdvertisingManager1": {
+          "ActiveInstances": 0,
+          "SupportedInstances": 4,
+          "SupportedIncludes": [
+            "tx-power",
+            "appearance",
+            "local-name"
+          ],
+          "SupportedSecondaryChannels": [
+            "1M",
+            "2M",
+            "Coded"
+          ],
+          "SupportedFeatures": [
+            "CanSetTxPower",
+            "HardwareOffload"
+          ],
+          "SupportedCapabilities": {
+            "MinTxPower": -19,
+            "MaxTxPower": 23,
+            "MaxAdvLen": 31,
+            "MaxScnRspLen": 31
+          }
+        }
+      },
+      "/org/bluez/hci0/dev_DC_23_4E_9C_E8_DE": {
+        "org.freedesktop.DBus.Introspectable": {},
+        "org.bluez.Device1": {
+          "Address": "DC:23:4E:9C:E8:DE",
+          "AddressType": "public",
+          "Name": "TY",
+          "Alias": "TY",
+          "Paired": false,
+          "Bonded": false,
+          "Trusted": false,
+          "Blocked": false,
+          "LegacyPairing": false,
+          "RSSI": -78,
+          "Connected": true,
+          "UUIDs": [
+            "00001800-0000-1000-8000-00805f9b34fb",
+            "00001801-0000-1000-8000-00805f9b34fb",
+            "00001910-0000-1000-8000-00805f9b34fb",
+            "0000a201-0000-1000-8000-00805f9b34fb"
+          ],
+          "Adapter": "/org/bluez/hci0",
+          "ServiceData": {
+            "0000a201-0000-1000-8000-00805f9b34fb": {
+              "__type": "<class 'bytearray'>",
+              "repr": "bytearray(b'\\x00R\\xf3@\\xf6\\xcc\\x9f\\xaa\\x7f')"
+            }
+          },
+          "ServicesResolved": true,
+          "AdvertisingFlags": {
+            "__type": "<class 'bytearray'>",
+            "repr": "bytearray(b'\\x06')"
+          }
+        },
+        "org.freedesktop.DBus.Properties": {}
+      },
+      "/org/bluez/hci0/dev_DC_23_4E_9C_E8_DE/service0008": {
+        "org.freedesktop.DBus.Introspectable": {},
+        "org.bluez.GattService1": {
+          "Handle": 8,
+          "UUID": "00001910-0000-1000-8000-00805f9b34fb",
+          "Device": "/org/bluez/hci0/dev_DC_23_4E_9C_E8_DE",
+          "Primary": true,
+          "Includes": []
+        },
+        "org.freedesktop.DBus.Properties": {}
+      },
+      "/org/bluez/hci0/dev_DC_23_4E_9C_E8_DE/service0008/char000b": {
+        "org.freedesktop.DBus.Introspectable": {},
+        "org.bluez.GattCharacteristic1": {
+          "Handle": 11,
+          "UUID": "00002b10-0000-1000-8000-00805f9b34fb",
+          "Service": "/org/bluez/hci0/dev_DC_23_4E_9C_E8_DE/service0008",
+          "Value": {
+            "__type": "<class 'bytearray'>",
+            "repr": "bytearray(b'\\x02\\xf6\\x0ce\\x8b\\xffNJ=F\\xb2\\xfe\\xe7\\xa7')"
+          },
+          "Notifying": true,
+          "Flags": [
+            "notify"
+          ],
+          "NotifyAcquired": false,
+          "MTU": 27
+        },
+        "org.freedesktop.DBus.Properties": {}
+      },
+      "/org/bluez/hci0/dev_DC_23_4E_9C_E8_DE/service0008/char000b/desc000d": {
+        "org.freedesktop.DBus.Introspectable": {},
+        "org.bluez.GattDescriptor1": {
+          "Handle": 9623,
+          "UUID": "00002902-0000-1000-8000-00805f9b34fb",
+          "Characteristic": "/org/bluez/hci0/dev_DC_23_4E_9C_E8_DE/service0008/char000b",
+          "Value": {
+            "__type": "<class 'bytearray'>",
+            "repr": "bytearray(b'')"
+          }
+        },
+        "org.freedesktop.DBus.Properties": {}
+      },
+      "/org/bluez/hci0/dev_DC_23_4E_9C_E8_DE/service0008/char0009": {
+        "org.freedesktop.DBus.Introspectable": {},
+        "org.bluez.GattCharacteristic1": {
+          "Handle": 9,
+          "UUID": "00002b11-0000-1000-8000-00805f9b34fb",
+          "Service": "/org/bluez/hci0/dev_DC_23_4E_9C_E8_DE/service0008",
+          "Value": {
+            "__type": "<class 'bytearray'>",
+            "repr": "bytearray(b'')"
+          },
+          "Flags": [
+            "write-without-response"
+          ],
+          "WriteAcquired": false,
+          "MTU": 27
+        },
+        "org.freedesktop.DBus.Properties": {}
+      },
+      "/org/bluez/hci0/dev_DC_23_4E_9C_E8_DE/service0004": {
+        "org.freedesktop.DBus.Introspectable": {},
+        "org.bluez.GattService1": {
+          "Handle": 4,
+          "UUID": "00001801-0000-1000-8000-00805f9b34fb",
+          "Device": "/org/bluez/hci0/dev_DC_23_4E_9C_E8_DE",
+          "Primary": true,
+          "Includes": []
+        },
+        "org.freedesktop.DBus.Properties": {}
+      },
+      "/org/bluez/hci0/dev_DC_23_4E_9C_E8_DE/service0004/char0005": {
+        "org.freedesktop.DBus.Introspectable": {},
+        "org.bluez.GattCharacteristic1": {
+          "Handle": 5,
+          "UUID": "00002a05-0000-1000-8000-00805f9b34fb",
+          "Service": "/org/bluez/hci0/dev_DC_23_4E_9C_E8_DE/service0004",
+          "Value": {
+            "__type": "<class 'bytearray'>",
+            "repr": "bytearray(b'')"
+          },
+          "Notifying": false,
+          "Flags": [
+            "read",
+            "indicate"
+          ],
+          "MTU": 27
+        },
+        "org.freedesktop.DBus.Properties": {}
+      },
+      "/org/bluez/hci0/dev_DC_23_4E_9C_E8_DE/service0004/char0005/desc0007": {
+        "org.freedesktop.DBus.Introspectable": {},
+        "org.bluez.GattDescriptor1": {
+          "Handle": 9622,
+          "UUID": "00002902-0000-1000-8000-00805f9b34fb",
+          "Characteristic": "/org/bluez/hci0/dev_DC_23_4E_9C_E8_DE/service0004/char0005",
+          "Value": {
+            "__type": "<class 'bytearray'>",
+            "repr": "bytearray(b'')"
+          }
+        },
+        "org.freedesktop.DBus.Properties": {}
+      },
+      "/org/bluez/hci0/dev_CD_5B_6A_75_6A_A9": {
+        "org.freedesktop.DBus.Introspectable": {},
+        "org.bluez.Device1": {
+          "Address": "CD:5B:6A:75:6A:A9",
+          "AddressType": "random",
+          "Alias": "CD-5B-6A-75-6A-A9",
+          "Paired": false,
+          "Bonded": false,
+          "Trusted": false,
+          "Blocked": false,
+          "LegacyPairing": false,
+          "RSSI": -74,
+          "Connected": false,
+          "UUIDs": [
+            "0000feed-0000-1000-8000-00805f9b34fb"
+          ],
+          "Adapter": "/org/bluez/hci0",
+          "ServiceData": {
+            "0000feed-0000-1000-8000-00805f9b34fb": {
+              "__type": "<class 'bytearray'>",
+              "repr": "bytearray(b'\\x02\\x00\\x0f\\xcbO\\xe6\\xa1\\x9c\\x9cl')"
+            }
+          },
+          "ServicesResolved": false,
+          "AdvertisingFlags": {
+            "__type": "<class 'bytearray'>",
+            "repr": "bytearray(b'\\x06')"
+          }
+        },
+        "org.freedesktop.DBus.Properties": {}
+      }
+    }
+  }
+}

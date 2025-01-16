@@ -1,0 +1,287 @@
+{
+  "home_assistant": {
+    "installation_type": "Home Assistant OS",
+    "version": "2023.12.0",
+    "dev": false,
+    "hassio": true,
+    "virtualenv": false,
+    "python_version": "3.11.6",
+    "docker": true,
+    "arch": "x86_64",
+    "timezone": "Europe/Sofia",
+    "os_name": "Linux",
+    "os_version": "6.1.59",
+    "supervisor": "2023.11.6",
+    "host_os": "Home Assistant OS 11.1",
+    "docker_version": "24.0.6",
+    "chassis": "vm",
+    "run_as_root": true
+  },
+  "custom_components": {
+    "hacs": {
+      "version": "1.33.0",
+      "requirements": [
+        "aiogithubapi>=22.10.1"
+      ]
+    },
+    "tuya_ble": {
+      "version": "0.1.8",
+      "requirements": [
+        "tuya-iot-py-sdk==0.6.6",
+        "pycountry==22.3.5"
+      ]
+    },
+    "ble_monitor": {
+      "version": "12.6.3",
+      "requirements": [
+        "pycryptodomex>=3.18.0",
+        "janus>=1.0.0",
+        "aioblescan>=0.2.14",
+        "btsocket>=0.2.0",
+        "pyric>=0.1.6.3"
+      ]
+    },
+    "alexa_media": {
+      "version": "4.8.0",
+      "requirements": [
+        "alexapy==1.27.10",
+        "packaging>=20.3",
+        "wrapt>=1.14.0"
+      ]
+    },
+    "smartlife": {
+      "version": "0.1.0",
+      "requirements": [
+        "tuya-device-sharing-sdk==0.1.9"
+      ]
+    },
+    "google_home": {
+      "version": "1.10.2",
+      "requirements": [
+        "glocaltokens==0.7.0"
+      ]
+    },
+    "tuya_ext": {
+      "version": "0.1.0",
+      "requirements": [
+        "tuya-iot-py-sdk==0.6.6"
+      ]
+    },
+    "tuya_smart_ir_ac": {
+      "version": "0.1.1",
+      "requirements": [
+        "tuya-connector-python==0.1.2"
+      ]
+    }
+  },
+  "integration_manifest": {
+    "domain": "tuya_ext",
+    "name": "Tuya extensions",
+    "codeowners": [
+      "@Tuya",
+      "@zlinoliver",
+      "@frenck",
+      "@donandren"
+    ],
+    "config_flow": true,
+    "dependencies": [
+      "ffmpeg"
+    ],
+    "dhcp": [
+      {
+        "macaddress": "105A17*"
+      },
+      {
+        "macaddress": "10D561*"
+      },
+      {
+        "macaddress": "1869D8*"
+      },
+      {
+        "macaddress": "381F8D*"
+      },
+      {
+        "macaddress": "508A06*"
+      },
+      {
+        "macaddress": "68572D*"
+      },
+      {
+        "macaddress": "708976*"
+      },
+      {
+        "macaddress": "7CF666*"
+      },
+      {
+        "macaddress": "84E342*"
+      },
+      {
+        "macaddress": "D4A651*"
+      },
+      {
+        "macaddress": "D81F12*"
+      }
+    ],
+    "documentation": "https://github.com/donandren/tuya_ext",
+    "integration_type": "hub",
+    "iot_class": "cloud_push",
+    "loggers": [
+      "tuya_iot"
+    ],
+    "version": "0.1.0",
+    "requirements": [
+      "tuya-iot-py-sdk==0.6.6"
+    ],
+    "is_built_in": false
+  },
+  "data": {
+    "endpoint": "https://openapi.tuyaeu.com",
+    "auth_type": 0,
+    "country_code": "359",
+    "app_type": "smartlife",
+    "mqtt_connected": true,
+    "disabled_by": null,
+    "disabled_polling": false,
+    "name": "\u0445\u043e\u043b Fujitsu",
+    "model": "",
+    "category": "infrared_ac",
+    "product_id": "qzktzhehinzsz2je",
+    "product_name": "Air Conditioning",
+    "online": true,
+    "sub": true,
+    "time_zone": "+03:00",
+    "active_time": "2023-12-08T02:00:23+00:00",
+    "create_time": "2023-10-11T09:45:07+00:00",
+    "update_time": "2023-12-08T02:03:15+00:00",
+    "function": {
+      "F": {
+        "type": "ENUM",
+        "value": {
+          "min": 0,
+          "max": 3,
+          "scale": 0,
+          "step": 1,
+          "type": "Integer"
+        }
+      },
+      "M": {
+        "type": "ENUM",
+        "value": {
+          "min": 0,
+          "max": 4,
+          "scale": 0,
+          "step": 1,
+          "type": "Integer"
+        }
+      },
+      "PowerOff": {
+        "type": "STRING",
+        "value": "PowerOff"
+      },
+      "PowerOn": {
+        "type": "STRING",
+        "value": "PowerOn"
+      },
+      "T": {
+        "type": "ENUM",
+        "value": {
+          "min": 16,
+          "max": 30,
+          "scale": 0,
+          "step": 1,
+          "type": "Integer"
+        }
+      }
+    },
+    "status_range": {
+      "wind": {
+        "type": "ENUM",
+        "value": {
+          "min": 0,
+          "max": 3,
+          "scale": 0,
+          "step": 1,
+          "type": "Integer"
+        }
+      },
+      "mode": {
+        "type": "ENUM",
+        "value": {
+          "min": 0,
+          "max": 4,
+          "scale": 0,
+          "step": 1,
+          "type": "Integer"
+        }
+      },
+      "power": {
+        "type": "BOOLEAN",
+        "value": {}
+      },
+      "temp": {
+        "type": "ENUM",
+        "value": {
+          "min": 16,
+          "max": 30,
+          "scale": 0,
+          "step": 1,
+          "type": "Integer"
+        }
+      }
+    },
+    "status": {
+      "power": 0,
+      "mode": 2,
+      "temp": 23,
+      "wind": 0
+    },
+    "home_assistant": {
+      "name": "\u0445\u043e\u043b Fujitsu",
+      "name_by_user": null,
+      "disabled": false,
+      "disabled_by": null,
+      "entities": [
+        {
+          "disabled": false,
+          "disabled_by": null,
+          "entity_category": null,
+          "device_class": null,
+          "original_device_class": null,
+          "icon": null,
+          "original_icon": null,
+          "unit_of_measurement": null,
+          "state": {
+            "entity_id": "climate.fujitsu",
+            "state": "off",
+            "attributes": {
+              "hvac_modes": [
+                "off",
+                "cool",
+                "heat",
+                "auto",
+                "fan_only",
+                "dry"
+              ],
+              "min_temp": 16.0,
+              "max_temp": 30.0,
+              "target_temp_step": 1.0,
+              "fan_modes": [
+                "auto",
+                "low",
+                "middle",
+                "high"
+              ],
+              "current_temperature": 23.0,
+              "temperature": 23.0,
+              "fan_mode": "auto",
+              "friendly_name": "\u0445\u043e\u043b Fujitsu",
+              "supported_features": 9
+            },
+            "last_changed": "2023-12-08T02:10:54.465086+00:00",
+            "last_updated": "2023-12-08T02:10:54.465086+00:00"
+          }
+        }
+      ]
+    }
+  }
+}

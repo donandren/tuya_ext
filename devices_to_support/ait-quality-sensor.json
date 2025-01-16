@@ -1,0 +1,372 @@
+{
+  "home_assistant": {
+    "installation_type": "Home Assistant OS",
+    "version": "2024.1.6",
+    "dev": false,
+    "hassio": true,
+    "virtualenv": false,
+    "python_version": "3.11.6",
+    "docker": true,
+    "arch": "x86_64",
+    "timezone": "Europe/Sofia",
+    "os_name": "Linux",
+    "os_version": "6.1.71-haos",
+    "supervisor": "2023.12.1",
+    "host_os": "Home Assistant OS 11.4",
+    "docker_version": "24.0.7",
+    "chassis": "vm",
+    "run_as_root": true
+  },
+  "custom_components": {
+
+  },
+  "integration_manifest": {
+    "domain": "tuya",
+    "name": "Tuya",
+    "codeowners": [
+      "@Tuya",
+      "@zlinoliver",
+      "@frenck"
+    ],
+    "config_flow": true,
+    "dependencies": [
+      "ffmpeg"
+    ],
+    "dhcp": [
+      {
+        "macaddress": "105A17*"
+      },
+      {
+        "macaddress": "10D561*"
+      },
+      {
+        "macaddress": "1869D8*"
+      },
+      {
+        "macaddress": "381F8D*"
+      },
+      {
+        "macaddress": "508A06*"
+      },
+      {
+        "macaddress": "68572D*"
+      },
+      {
+        "macaddress": "708976*"
+      },
+      {
+        "macaddress": "7CF666*"
+      },
+      {
+        "macaddress": "84E342*"
+      },
+      {
+        "macaddress": "D4A651*"
+      },
+      {
+        "macaddress": "D81F12*"
+      }
+    ],
+    "documentation": "https://www.home-assistant.io/integrations/tuya",
+    "integration_type": "hub",
+    "iot_class": "cloud_push",
+    "loggers": [
+      "tuya_iot"
+    ],
+    "requirements": [
+      "tuya-iot-py-sdk==0.6.6"
+    ],
+    "is_built_in": true
+  },
+  "data": {
+    "endpoint": "https://openapi.tuyaeu.com",
+    "auth_type": 0,
+    "country_code": "359",
+    "app_type": "smartlife",
+    "mqtt_connected": true,
+    "disabled_by": null,
+    "disabled_polling": false,
+    "name": "\u0445\u043e\u043b \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u043e \u0432\u044a\u0437\u0434\u0443\u0445",
+    "model": "",
+    "category": "hjjcy",
+    "product_id": "ofq1jlyksn2rys3o",
+    "product_name": "Nobito",
+    "online": true,
+    "sub": false,
+    "time_zone": "+02:00",
+    "active_time": "2024-01-31T12:32:16+00:00",
+    "create_time": "2024-01-31T12:32:16+00:00",
+    "update_time": "2024-01-31T19:42:02+00:00",
+    "function": {},
+    "status_range": {
+      "air_quality_index": {
+        "type": "Enum",
+        "value": {
+          "range": [
+            "level_1",
+            "level_2",
+            "level_3",
+            "level_4"
+          ]
+        }
+      },
+      "temp_current": {
+        "type": "Integer",
+        "value": {
+          "unit": "\u2103",
+          "min": -90,
+          "max": 800,
+          "scale": 1,
+          "step": 1
+        }
+      },
+      "humidity_value": {
+        "type": "Integer",
+        "value": {
+          "unit": "%",
+          "min": 0,
+          "max": 100,
+          "scale": 0,
+          "step": 1
+        }
+      },
+      "co2_value": {
+        "type": "Integer",
+        "value": {
+          "unit": "ppm",
+          "min": 400,
+          "max": 6000,
+          "scale": 0,
+          "step": 1
+        }
+      },
+      "ch2o_value": {
+        "type": "Integer",
+        "value": {
+          "unit": "mg/m\u00b3",
+          "min": 0,
+          "max": 600,
+          "scale": 3,
+          "step": 1
+        }
+      },
+      "voc_value": {
+        "type": "Integer",
+        "value": {
+          "unit": "mg/m\u00b3",
+          "min": 0,
+          "max": 2000,
+          "scale": 3,
+          "step": 1
+        }
+      },
+      "pm25_value": {
+        "type": "Integer",
+        "value": {
+          "unit": "ug/m\u00b3",
+          "min": 0,
+          "max": 2000,
+          "scale": 0,
+          "step": 1
+        }
+      },
+      "pm1": {
+        "type": "Integer",
+        "value": {
+          "unit": "ug/m\u00b3",
+          "min": 0,
+          "max": 2000,
+          "scale": 0,
+          "step": 1
+        }
+      },
+      "pm10": {
+        "type": "Integer",
+        "value": {
+          "unit": "ug/m\u00b3",
+          "min": 0,
+          "max": 2000,
+          "scale": 0,
+          "step": 1
+        }
+      },
+      "battery_state": {
+        "type": "Enum",
+        "value": {
+          "range": [
+            "low",
+            "middle",
+            "high"
+          ]
+        }
+      },
+      "battery_percentage": {
+        "type": "Integer",
+        "value": {
+          "unit": "%",
+          "min": 0,
+          "max": 100,
+          "scale": 0,
+          "step": 1
+        }
+      },
+      "charge_state": {
+        "type": "Boolean",
+        "value": {}
+      }
+    },
+    "status": {
+      "air_quality_index": "level_1",
+      "temp_current": 236,
+      "humidity_value": 30,
+      "co2_value": 410,
+      "ch2o_value": 2,
+      "voc_value": 9,
+      "pm25_value": 8,
+      "pm1": 4,
+      "pm10": 9,
+      "battery_state": "low",
+      "battery_percentage": 100,
+      "charge_state": false
+    },
+    "home_assistant": {
+      "name": "\u0445\u043e\u043b \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u043e \u0432\u044a\u0437\u0434\u0443\u0445",
+      "name_by_user": null,
+      "disabled": false,
+      "disabled_by": null,
+      "entities": [
+        {
+          "disabled": false,
+          "disabled_by": null,
+          "entity_category": null,
+          "device_class": null,
+          "original_device_class": "temperature",
+          "icon": null,
+          "original_icon": null,
+          "unit_of_measurement": "\u00b0C",
+          "state": {
+            "entity_id": "sensor.nobito_temperature",
+            "state": "23.6",
+            "attributes": {
+              "state_class": "measurement",
+              "unit_of_measurement": "\u00b0C",
+              "device_class": "temperature",
+              "friendly_name": "\u0445\u043e\u043b \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u043e \u0432\u044a\u0437\u0434\u0443\u0445 \u0422\u0435\u043c\u043f\u0435\u0440\u0430\u0442\u0443\u0440\u0430"
+            },
+            "last_changed": "2024-02-01T22:46:19.766661+00:00",
+            "last_updated": "2024-02-01T22:46:19.766661+00:00"
+          }
+        },
+        {
+          "disabled": false,
+          "disabled_by": null,
+          "entity_category": null,
+          "device_class": null,
+          "original_device_class": "humidity",
+          "icon": null,
+          "original_icon": null,
+          "unit_of_measurement": "%",
+          "state": {
+            "entity_id": "sensor.nobito_humidity",
+            "state": "30.0",
+            "attributes": {
+              "state_class": "measurement",
+              "unit_of_measurement": "%",
+              "device_class": "humidity",
+              "friendly_name": "\u0445\u043e\u043b \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u043e \u0432\u044a\u0437\u0434\u0443\u0445 \u0412\u043b\u0430\u0436\u043d\u043e\u0441\u0442"
+            },
+            "last_changed": "2024-02-01T22:41:21.848664+00:00",
+            "last_updated": "2024-02-01T22:41:21.848664+00:00"
+          }
+        },
+        {
+          "disabled": false,
+          "disabled_by": null,
+          "entity_category": null,
+          "device_class": null,
+          "original_device_class": "carbon_dioxide",
+          "icon": null,
+          "original_icon": null,
+          "unit_of_measurement": "ppm",
+          "state": {
+            "entity_id": "sensor.nobito_carbon_dioxide",
+            "state": "410.0",
+            "attributes": {
+              "state_class": "measurement",
+              "unit_of_measurement": "ppm",
+              "device_class": "carbon_dioxide",
+              "friendly_name": "\u0445\u043e\u043b \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u043e \u0432\u044a\u0437\u0434\u0443\u0445 Carbon dioxide"
+            },
+            "last_changed": "2024-02-01T22:46:31.875994+00:00",
+            "last_updated": "2024-02-01T22:46:31.875994+00:00"
+          }
+        },
+        {
+          "disabled": false,
+          "disabled_by": null,
+          "entity_category": null,
+          "device_class": null,
+          "original_device_class": null,
+          "icon": null,
+          "original_icon": null,
+          "unit_of_measurement": "mg/m\u00b3",
+          "state": {
+            "entity_id": "sensor.nobito_formaldehyde",
+            "state": "0.002",
+            "attributes": {
+              "state_class": "measurement",
+              "unit_of_measurement": "mg/m\u00b3",
+              "friendly_name": "\u0445\u043e\u043b \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u043e \u0432\u044a\u0437\u0434\u0443\u0445 Formaldehyde"
+            },
+            "last_changed": "2024-02-01T22:46:23.898868+00:00",
+            "last_updated": "2024-02-01T22:46:23.898868+00:00"
+          }
+        },
+        {
+          "disabled": false,
+          "disabled_by": null,
+          "entity_category": null,
+          "device_class": null,
+          "original_device_class": "volatile_organic_compounds",
+          "icon": null,
+          "original_icon": null,
+          "unit_of_measurement": "\u00b5g/m\u00b3",
+          "state": {
+            "entity_id": "sensor.nobito_vocs",
+            "state": "9.0",
+            "attributes": {
+              "state_class": "measurement",
+              "unit_of_measurement": "\u00b5g/m\u00b3",
+              "device_class": "volatile_organic_compounds",
+              "friendly_name": "\u0445\u043e\u043b \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u043e \u0432\u044a\u0437\u0434\u0443\u0445 VOCs"
+            },
+            "last_changed": "2024-02-01T22:46:31.876328+00:00",
+            "last_updated": "2024-02-01T22:46:31.876328+00:00"
+          }
+        },
+        {
+          "disabled": false,
+          "disabled_by": null,
+          "entity_category": null,
+          "device_class": null,
+          "original_device_class": "pm25",
+          "icon": null,
+          "original_icon": null,
+          "unit_of_measurement": "\u00b5g/m\u00b3",
+          "state": {
+            "entity_id": "sensor.nobito_pm2_5",
+            "state": "8.0",
+            "attributes": {
+              "state_class": "measurement",
+              "unit_of_measurement": "\u00b5g/m\u00b3",
+              "device_class": "pm25",
+              "friendly_name": "\u0445\u043e\u043b \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u043e \u0432\u044a\u0437\u0434\u0443\u0445 PM2.5"
+            },
+            "last_changed": "2024-02-01T22:46:31.876509+00:00",
+            "last_updated": "2024-02-01T22:46:31.876509+00:00"
+          }
+        }
+      ]
+    }
+  }
+}
