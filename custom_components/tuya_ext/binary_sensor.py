@@ -166,21 +166,10 @@ class DoorbellSensorEntity(TuyaBinarySensorEntity):
             if self.turn_off_next < 1:
                 self.set_status_off()
 
-    async def async_added_to_hass(self) -> None:
-        """Call when entity is added to hass."""
-        self.async_on_remove(
-            async_dispatcher_connect(
-                self.hass,
-                f"{TUYA_HA_SIGNAL_UPDATE_ENTITY}_{self.device.id}",
-                self.async_write_ha_state_doorbell,
-            )
-        )
-
-    def async_write_ha_state_doorbell(self):
+    def async_update_and_write_state(self):
         # self.schedule_update_ha_state()
         # LOGGER.info(f"Doorbell.async_write_ha_state() {self.device.status}")
         if self.is_on:
             self.turn_off_next = 2 # after 31-60 seconds ring will stop
-        #super().async_write_ha_state()
         self.schedule_update_ha_state()
 
