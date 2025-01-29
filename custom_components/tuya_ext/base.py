@@ -9,6 +9,7 @@ from typing import Any, Literal, Self, overload
 
 from tuya_iot import TuyaDevice, TuyaDeviceManager
 
+from homeassistant.core import callback
 from homeassistant.helpers.device_registry import DeviceInfo
 from homeassistant.helpers.dispatcher import async_dispatcher_connect
 from homeassistant.helpers.entity import Entity
@@ -266,9 +267,14 @@ class TuyaEntity(Entity):
             async_dispatcher_connect(
                 self.hass,
                 f"{TUYA_HA_SIGNAL_UPDATE_ENTITY}_{self.device.id}",
-                self.async_write_ha_state,
+                self.async_update_and_write_state,
             )
         )
+    
+    @callback
+    def async_update_and_write_state(self, *args) -> None:
+        """Update the entity and write state."""
+        self.async_write_ha_state()
 
     def _send_command(self, commands: list[dict[str, Any]]) -> None:
         """Send command to the device."""
