@@ -437,6 +437,17 @@
       }
     },
     "sensor": {
+      "air_quality_index": {
+        "name": "Air quality index",
+        "state": {
+          "level_1": "Very Good",
+          "level_2": "Good",
+          "level_3": "Fair",
+          "level_4": "Poor",
+          "level_5": "Very Poor",
+          "level_6": "Hazardous"
+        }
+      },
       "battery": {
         "name": "[%key:component::sensor::entity_component::battery::name%]"
       },
@@ -462,7 +473,7 @@
         "name": "[%key:component::sensor::entity_component::pm25::name%]"
       },
       "pm1": {
-        "name": "[%key:component::sensor::entity_component::pm1::name%]"
+        "name": "PM1"
       },
       "pm10": {
         "name": "[%key:component::sensor::entity_component::pm10::name%]"

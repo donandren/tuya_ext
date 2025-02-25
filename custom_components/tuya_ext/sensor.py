@@ -103,18 +103,24 @@ SENSORS: dict[str, tuple[TuyaSensorEntityDescription, ...]] = {
             device_class=SensorDeviceClass.PM1,
             state_class=SensorStateClass.MEASUREMENT,
         ),
+        # already in home assistant tuya from 2025
+        # TuyaSensorEntityDescription(
+        #     key=DPCode.PM10,
+        #     translation_key="pm10",
+        #     device_class=SensorDeviceClass.PM10,
+        #     state_class=SensorStateClass.MEASUREMENT,
+        # ),
         TuyaSensorEntityDescription(
-            key=DPCode.PM10,
-            translation_key="pm10",
-            device_class=SensorDeviceClass.PM10,
+            key=DPCode.CO_VALUE,
+            translation_key="carbon_monoxide",
+            device_class=SensorDeviceClass.CO,
             state_class=SensorStateClass.MEASUREMENT,
         ),
         TuyaSensorEntityDescription(
-            key=DPCode.CO_VALUE,
-            translation_key="pm10",
-            device_class=SensorDeviceClass.CO,
-            state_class=SensorStateClass.MEASUREMENT,
-        ),                
+            key=DPCode.AIR_QUALITY_INDEX,
+            translation_key="air_quality_index",
+            icon="mdi:air-filter"
+        ),        
     ),    
 }
 
