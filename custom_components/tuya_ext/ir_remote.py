@@ -48,6 +48,10 @@ IRREMOTE_DESCRIPTIONS: dict[str, TuyaIRRemoteEntityDescription] = {
         key="infrared_amplifier",
         # device_class=MediaPlayerDeviceClass.SPEAKER,
     ),
+    "infrared_stb": TuyaIRRemoteEntityDescription(
+        key="infrared_stb",
+        device_class="stb",
+    ),
 }
 
 

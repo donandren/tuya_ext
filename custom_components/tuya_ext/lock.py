@@ -120,8 +120,7 @@ class TuyaLockEntity(TuyaEntity, LockEntity):
         if self._attr_is_unlocking is True:
             if not self.is_locked:
                 self._attr_is_unlocking = None
-
-        self.async_write_ha_state()
+        self.schedule_update_ha_state()
 
     def _send_lock(self, lock: bool) -> None:
         key = get_lock_temporary_key(self.device_manager.api, self.device.id)

@@ -1,10 +1,20 @@
 {
   "domain": "tuya_ext",
   "name": "Tuya extensions",
-  "codeowners": ["@Tuya", "@zlinoliver", "@frenck", "@donandren"],
+  "codeowners": [
+    "@Tuya",
+    "@zlinoliver",
+    "@frenck",
+    "@donandren"
+  ],
   "config_flow": true,
-  "after_dependencies": ["tuya"],
-  "dependencies": ["ffmpeg", "tuya"],
+  "after_dependencies": [
+    "tuya"
+  ],
+  "dependencies": [
+    "ffmpeg",
+    "tuya"
+  ],
   "dhcp": [
     {
       "macaddress": "105A17*"
@@ -43,7 +53,12 @@
   "documentation": "https://github.com/donandren/tuya_ext",
   "integration_type": "hub",
   "iot_class": "cloud_push",
-  "loggers": ["tuya_iot"],
-  "version": "0.5.2",
-  "requirements": ["tuya-iot-py-sdk==0.6.6", "tuya-device-sharing-sdk==0.1.9"]
+  "loggers": [
+    "tuya_iot"
+  ],
+  "version": "0.5.3",
+  "requirements": [
+    "tuya-iot-py-sdk==0.6.6",
+    "tuya-device-sharing-sdk==0.1.9"
+  ]
 }

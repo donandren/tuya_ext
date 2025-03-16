@@ -35,6 +35,8 @@ from .const import (
     TUYA_DISCOVERY_NEW,
     TUYA_HA_SIGNAL_UPDATE_ENTITY,
 )
+from paho.mqtt import client as mqtt
+from urllib.parse import urlsplit
 
 
 class HomeAssistantTuyaData(NamedTuple):
@@ -44,8 +46,33 @@ class HomeAssistantTuyaData(NamedTuple):
     device_manager: TuyaDeviceManager
     home_manager: TuyaHomeManager
 
+#Version 2.x of the paho-mqtt MQTT client does not allow the client_id as first positional parameter.    
+#def _start(self, mq_config: TuyaMQConfig) -> mqtt.Client:
+def fixed_TuyaOpenMQ_start(self, mq_config) -> mqtt.Client:
+    #original line paho no longer support
+    #https://github.com/tuya/tuya-device-sharing-sdk/pull/25/files
+    #mqttc = mqtt.Client(mq_config.client_id)
+    mqttc = mqtt.Client(client_id=mq_config.client_id)
+    mqttc.username_pw_set(mq_config.username, mq_config.password)
+    mqttc.user_data_set({"mqConfig": mq_config})
+    mqttc.on_connect = self._on_connect
+    mqttc.on_message = self._on_message
+    mqttc.on_subscribe = self._on_subscribe
+    mqttc.on_log = self._on_log
+    mqttc.on_disconnect = self._on_disconnect
+
+    url = urlsplit(mq_config.url)
+    if url.scheme == "ssl":
+        mqttc.tls_set()
+
+    mqttc.connect(url.hostname, url.port)
+
+    mqttc.loop_start()
+    return mqttc
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
+    # monkey patch tuya_iot as there is a problem
+    TuyaOpenMQ._start = fixed_TuyaOpenMQ_start
     """Async setup hass config entry."""
     hass.data.setdefault(DOMAIN, {})
 
@@ -131,7 +158,10 @@ async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     unload = await hass.config_entries.async_unload_platforms(entry, PLATFORMS)
     if unload:
         hass_data: HomeAssistantTuyaData = hass.data[DOMAIN][entry.entry_id]
-        hass_data.device_manager.mq.stop()
+        try:
+            hass_data.device_manager.mq.stop()
+        except Exception as ex:
+            LOGGER.error(f"async_unload_entry error: {ex}")
         hass_data.device_manager.remove_device_listener(hass_data.device_listener)
 
         hass.data[DOMAIN].pop(entry.entry_id)

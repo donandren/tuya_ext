@@ -161,13 +161,13 @@ class DoorbellSensorEntity(TuyaBinarySensorEntity):
         self.turn_off_next = 0
 
     async def async_update(self):
+        # LOGGER.info(f"Doorbell.async_update() {self.device.status}")
         if self.is_on and self.turn_off_next > 0:
             self.turn_off_next = self.turn_off_next - 1
             if self.turn_off_next < 1:
                 self.set_status_off()
 
     def async_update_and_write_state(self):
-        # self.schedule_update_ha_state()
         # LOGGER.info(f"Doorbell.async_write_ha_state() {self.device.status}")
         if self.is_on:
             self.turn_off_next = 2 # after 31-60 seconds ring will stop
